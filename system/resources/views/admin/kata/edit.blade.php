@@ -9,11 +9,11 @@
 					Edit Data kata
 				</div>
 				<div class="card-body">
-					<form action="{{url('admin/kata', $kata->id)}}" method="post">
+					<form action="{{url('admin/kata/update', $kata->id)}}" method="post">
 						@csrf
-						@method("PUT")
+					<input type="hidden" name="id" value="{{$kata->id}}">
 					<div class="form-group">
-						<label for="" class="control-label">kataname </label>
+						<label for="" class="control-label">nama kata </label>
 						<input type="text" name="nama_kata" class="form-control" value="{{$kata->nama_kata}}">
 					</div>
 

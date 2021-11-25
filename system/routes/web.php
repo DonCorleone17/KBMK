@@ -27,6 +27,13 @@ Route::get('logout', [AuthController::class, 'logout']);
 
 Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/', [AdminController::class, 'index']);
-    Route::resource('kata', KataController::class);
+    // CRUD kata
+    Route::get('kata', [KataController::class, 'index']);
+    Route::get('kata/create', [KataController::class, 'create']);
+    Route::post('kata', [KataController::class, 'store']);
+    Route::get('kata/{kata}', [KataController::class, 'show']);
+    Route::get('kata/{kata}/edit', [KataController::class, 'edit']);
+    Route::post('kata/update/{id}', [KataController::class, 'update']);
+    Route::delete('kata/{kata}', [KataController::class, 'destroy']);
 
 });

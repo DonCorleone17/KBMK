@@ -45,13 +45,11 @@ class KataController extends Controller
         return view('admin.kata.edit',$data);
     }
 
-    public function update(Kata $kata)
+    public function update(Request $request)
     {
-        dd($kata->id);
-        $blog = Kata::findOrFail($kata->id);
-
-        $kata->save();
-
+        DB::table('kata')->where('id', $request->id)->update([
+                'nama_kata'=>$request->nama_kata
+            ]);
         return redirect('admin/kata')->with('success','Data Berhasil Diubah');
     }
 
