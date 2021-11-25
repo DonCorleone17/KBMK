@@ -25,5 +25,5 @@ Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 Route::prefix('admin')->middleware('auth')->group(function(){
-    Route::get('index', [AdminController::class, 'index']);
+    Route::get('/', [AdminController::class, 'index']);
 });

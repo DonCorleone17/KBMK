@@ -14,7 +14,7 @@ class AuthController extends Controller
 
     function loginProcess(User $user){
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
-            return redirect('admin/index')->with('success','Selamat datang');
+            return redirect('admin/')->with('success','Selamat datang');
         } else {
             return back()->with('danger', 'Login gagal, Silahkan coba kembali');
         }

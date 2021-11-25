@@ -11,26 +11,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <title>SIDAFA</title>
 
-  @include('admin.template.section.link')
+  @include('template.section.link')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-  	@include('admin.template.section.header')
-  	@include('admin.template.section.rightnavbar')
+  	@include('template.section.header')
+  	@include('template.section.rightnavbar')
   </nav>
   <!-- /.navbar -->
 
-@include('admin.template.section.sidebar')
+@include('template.section.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          @include('admin.template.utils.notif')
+          @include('template.utils.notif')
         </div>
       </div>
     </div>
@@ -48,14 +48,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </aside>
   <!-- /.control-sidebar -->
 
-  @include('admin.template.section.footer')
+  @include('template.section.footer')
 
 </div>
 <!-- ./wrapper -->
 
-@include('admin.template.section.script')
-@stack('pendaftaranScripts')
-@stack('sppScripts')
+@include('template.section.script')
 
 </body>
 </html>
