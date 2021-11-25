@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,6 @@ Route::get('logout', [AuthController::class, 'logout']);
 
 Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/', [AdminController::class, 'index']);
+    Route::resource('kata', KataController::class);
+
 });
