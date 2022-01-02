@@ -4,7 +4,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mt-5">
-			selamat datang
+			Jadi, ketike mpuk udah sampai disenek, berarti mpuk admin.</br>
+			Kalo mpuk udah jadi admin, berarti mpuk bise ngapepun disenek.
 		</div>
 	</div>
 </div>

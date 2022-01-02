@@ -6,31 +6,32 @@ use Illuminate\Http\Request;
 use App\Models\Kata;
 use DB;
 
-class KataController extends Controller
+class KataApiController extends Controller
 {
     public function index()
     {
-        $data['list_kata'] = DB::table('kata')
+        // $data['list_kata'] = Kata::where('kategori','kata')->get();
+        // $data['list_kata'] = DB::table('kategori')->select('*')->orderBy('nama_kategori')->get();
+        $kata = DB::table('kata')
         ->select('kategori.nama_kategori','kata.id', 'kata.nama_kata', 'kata.deskripsi')
         ->join('kategori','kategori.id','kata.id_kategori')
+        ->where('kategori.id','1')
         ->orderBy('nama_kata') 
         ->get();
-        // dd($data['list_kata']); 
-        return view('admin.kata.index',$data);
+        // dd($kata);
+        return response()->json(['message' => 'success', 'kata' => $kata]);
     }
 
     public function create()
     {
-        $data['list_kategori'] = DB::table('kategori')->select('*')->get();
-        // dd($data['list_kategori']);
-        return view('admin.kata.create',$data);
+        return view('admin.kata.create');
     }
 
     public function store(Request $request)
     {
         $user = new Kata;
         $user->nama_kata = request('nama_kata');
-        $user->id_kategori = request('id_kategori');
+        $user->kategori = request('kategori');
         $user->deskripsi = request('deskripsi');
         $user->save();
 
@@ -43,26 +44,22 @@ class KataController extends Controller
         $data['kata'] = Kata::select('*')->where('id',$id)->get();
         $data['kata'] = $data['kata'][0];
 
-        return view('admin.kata.show',$data);
+        return response()->json(['message' => 'success', 'data' => $data]);
     }
 
     public function edit($id)
     {
-        $data['list_kategori'] = DB::table('kategori')->select('*')->get();
-        $data['kata'] = DB::table('kata')
-        ->select('kata.*','kategori.nama_kategori',DB::raw('kategori.id as id_kategori'))
-        ->join('kategori','kategori.id','kata.id_kategori')
-        ->where('kata.id',$id)
-        ->first();
-        // dd($data['kata']);
-        return view('admin.kata.edit',$data);
+        $data['kata'] = Kata::select('*')->where('id',$id)->get();
+        $data['kata'] = $data['kata'][0];
+        
+        return response()->json(['message' => 'success', 'data' => $data]);
     }
 
     public function update(Request $request)
     {
         DB::table('kata')->where('id', $request->id)->update([
-                'id_kategori'=>$request->id_kategori,
                 'nama_kata'=>$request->nama_kata,
+                'kategori'=>$request->kategori,
                 'deskripsi'=>$request->deskripsi
             ]);
         return redirect('admin/kata')->with('success','Data Berhasil Diubah');
@@ -75,8 +72,3 @@ class KataController extends Controller
         return redirect('admin/kata')->with('danger','Data Berhasil Dihapus');
     }
 }
-
-// $data['list_kata']
-// SELECT kategori.id as id_kategori, kategori.nama_kategori, kata.id as id_kata, kata.nama_kata, kata.deskripsi
-// FROM `kata`
-// join kategori on kategori.id=kata.id_kategori;

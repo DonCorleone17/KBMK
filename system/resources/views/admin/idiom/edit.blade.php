@@ -1,33 +1,21 @@
 @extends('template.base')
-
 @section('content')
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mt-5">
 			<div class="card">
 				<div class="card-header">
-					Tambah Data Kata
+					Edit Data Idiom
 				</div>
 				<div class="card-body">
-					<form action="{{url('admin/kata')}}" method="post">
+					<form action="{{url('admin/idiom/update', $list_kategori->id)}}" method="post">
 						@csrf
+					<input type="hidden" name="id" value="{{$list_kategori->id}}">
 					<div class="form-group">
-						<label for="" class="control-label">Nama Kata</label>
-						<input type="text" name="nama_kata" class="form-control">
+						<label for="" class="control-label">Idiom</label>
+						<input type="text" name="nama_kategori" class="form-control" value="{{$list_kategori->nama_kategori}}">
 					</div>
-					<div class="form-group">
-						<label for="" class="control-label">Kategori Kata</label>
-						<select class="form-control" name="id_kategori" required="">
-							<option value="">-- Kategori Kata--</option>
-							@foreach($list_kategori as $d)
-							<option value="{{$d->id}}">{{$d->nama_kategori}}</option>
-							@endforeach
-						</select>	
-					</div>
-						<div class="form-group">
-							<label class="label">Deskripsi</label>
-							<textarea class="form-control"  name="deskripsi" style="height: 120px"></textarea>	
-						</div>
 
 					<button type="submit" class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
 					</form>

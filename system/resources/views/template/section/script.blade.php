@@ -35,6 +35,7 @@
 
 	  })
 </script>
+@stack('script')
 
 @stack('scriptDashboard')
 @stack('periodeScript')

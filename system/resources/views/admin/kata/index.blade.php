@@ -14,7 +14,9 @@
 						<thead>
 							<th>No</th>
 							<th>Aksi</th>
-							<th>Nama Kata</th>
+							<th>Kategori</th>
+							<th>Kata</th>
+							<th>Deskripsi</th>
 						</thead>
 						<tbody>
 							@foreach($list_kata as $kata)
@@ -27,7 +29,9 @@
 								@include('template.utils.delete', ['url' => url('admin/kata', $kata->id)])
 								</div>
 							</td>
+							<td>{{$kata->nama_kategori}}</td>
 							<td>{{$kata->nama_kata}}</td>
+							<td>{{$kata->deskripsi}}</td>
 						 </tr>
 						 	@endforeach
 						</tbody>

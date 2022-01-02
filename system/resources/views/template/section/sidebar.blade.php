@@ -5,12 +5,12 @@ function checkrouteactive($route){
 }
 @endphp
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar elevation-4" style="background:#ab8854; color: #ffffff">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="{{ url('public/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ url('public/dist/img/logo-kbmk1.png')}}" alt="Logo KBMK" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">SIDAFA</span>
+      <span class="brand-text font-weight-light">KBMK | Admin</span>
     </a>
 
     <!-- Sidebar -->
@@ -39,7 +39,7 @@ function checkrouteactive($route){
           <li class="nav-item">
             <a href="{{url('admin')}}" class="nav-link {{checkrouteactive('admin')}}">
               <i class="nav-icon fas fa-home"></i>
-              <p>
+              <p style="color: white; font-weight: bold;">
                 Beranda
               </p>
             </a>
@@ -48,8 +48,16 @@ function checkrouteactive($route){
           <li class="nav-item">
             <a href="{{url('admin/kata')}}" class="nav-link {{checkrouteactive('admin/kata')}}">
               <i class="nav-icon fas fa-home"></i>
-              <p>
+              <p style="color: white; font-weight: bold;">
                 Data Kata
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/idiom')}}" class="nav-link {{checkrouteactive('admin/idiom')}}">
+              <i class="nav-icon fas fa-home"></i>
+              <p style="color: white; font-weight: bold;">
+                Data Idiom
               </p>
             </a>
           </li>

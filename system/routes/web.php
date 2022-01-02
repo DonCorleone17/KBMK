@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KataController;
+use App\Http\Controllers\IdiomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,13 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('kata/{kata}/edit', [KataController::class, 'edit']);
     Route::post('kata/update/{id}', [KataController::class, 'update']);
     Route::delete('kata/{kata}', [KataController::class, 'destroy']);
+
+    Route::get('idiom', [IdiomController::class, 'index']);
+    Route::get('idiom/create', [IdiomController::class, 'create']);
+    Route::post('idiom', [IdiomController::class, 'store']);
+    Route::get('idiom/{kata}', [IdiomController::class, 'show']);
+    Route::get('idiom/{kata}/edit', [IdiomController::class, 'edit']);
+    Route::post('idiom/update/{id}', [IdiomController::class, 'update']);
+    Route::delete('idiom/{kata}', [IdiomController::class, 'destroy']);
 
 });

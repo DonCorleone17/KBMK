@@ -13,6 +13,7 @@
     <!-- Select2 -->
   <link rel="stylesheet" href="{{ url('public/plugins/select2/css/select2.min.css')}}">
   <link rel="stylesheet" href="{{ url('public/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+  @stack('style')
 <!-- font-awesome -->
 <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
   
