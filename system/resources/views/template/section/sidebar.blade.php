@@ -49,7 +49,7 @@ function checkrouteactive($route){
             <a href="{{url('admin/kata')}}" class="nav-link {{checkrouteactive('admin/kata')}}">
               <i class="nav-icon fas fa-home"></i>
               <p style="color: white; font-weight: bold;">
-                Data Kata
+                Data Kamus
               </p>
             </a>
           </li>
@@ -57,7 +57,7 @@ function checkrouteactive($route){
             <a href="{{url('admin/idiom')}}" class="nav-link {{checkrouteactive('admin/idiom')}}">
               <i class="nav-icon fas fa-home"></i>
               <p style="color: white; font-weight: bold;">
-                Data Idiom
+                Kategori
               </p>
             </a>
           </li>

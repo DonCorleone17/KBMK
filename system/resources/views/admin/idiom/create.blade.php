@@ -6,13 +6,13 @@
 		<div class="col-md-12 mt-5">
 			<div class="card">
 				<div class="card-header">
-					Tambah Data Idiom
+					Tambah Kategori
 				</div>
 				<div class="card-body">
 					<form action="{{url('admin/idiom')}}" method="post">
 						@csrf
 					<div class="form-group">
-						<label for="" class="control-label">Idiom</label>
+						<label for="" class="control-label">Kategori</label>
 						<input type="text" name="nama_kategori" class="form-control">
 					</div>
 					<!-- <div class="form-group">
