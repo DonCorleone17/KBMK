@@ -16,7 +16,9 @@
 							<th>Aksi</th>
 							<th>Kategori</th>
 							<th>Kata</th>
+							<th>Pelafalan</th>
 							<th>Deskripsi</th>
+							<th>Audio</th>
 						</thead>
 						<tbody>
 							@foreach($list_kata as $kata)
@@ -24,14 +26,16 @@
 							<td>{{$loop->iteration}}</td>
 							<td>
 								<div class="btn-group">
-								<a href="{{url('admin/kata', $kata->id)}}" class="btn btn-dark float-right"><i class="fa fa-info"></i></a>
-								<a href="{{url('admin/kata', $kata->id)}}/edit" class="btn btn-warning float-right"><i class="fa fa-edit"></i></a>
-								@include('template.utils.delete', ['url' => url('admin/kata', $kata->id)])
+								<a href="{{url('admin/kata', $kata->idk)}}" class="btn btn-dark float-right"><i class="fa fa-info"></i></a>
+								<a href="{{url('admin/kata', $kata->idk)}}/edit" class="btn btn-warning float-right"><i class="fa fa-edit"></i></a>
+								@include('template.utils.delete', ['url' => url('admin/kata', $kata->idk)])
 								</div>
 							</td>
 							<td>{{$kata->nama_kategori}}</td>
 							<td>{{$kata->nama_kata}}</td>
+							<td>{{$kata->pelafalan}}</td>
 							<td>{{$kata->deskripsi}}</td>
+							<td>{{$kata->audio}}</td>
 						 </tr>
 						 	@endforeach
 						</tbody>

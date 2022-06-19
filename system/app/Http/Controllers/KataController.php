@@ -11,7 +11,7 @@ class KataController extends Controller
     public function index()
     {
         $data['list_kata'] = DB::table('kata')
-        ->select('kategori.nama_kategori','kata.id', 'kata.nama_kata', 'kata.deskripsi')
+        ->select('*','kata.id as idk')
         ->join('kategori','kategori.id','kata.id_kategori')
         ->orderBy('nama_kata') 
         ->get();
@@ -31,6 +31,8 @@ class KataController extends Controller
         $user = new Kata;
         $user->nama_kata = request('nama_kata');
         $user->id_kategori = request('id_kategori');
+        $user->pelafalan = request('pelafalan');
+        $user->audio = request('audio');
         $user->deskripsi = request('deskripsi');
         $user->save();
 
@@ -48,6 +50,7 @@ class KataController extends Controller
 
     public function edit($id)
     {
+        // dd($id);
         $data['list_kategori'] = DB::table('kategori')->select('*')->get();
         $data['kata'] = DB::table('kata')
         ->select('kata.*','kategori.nama_kategori',DB::raw('kategori.id as id_kategori'))
@@ -63,6 +66,8 @@ class KataController extends Controller
         DB::table('kata')->where('id', $request->id)->update([
                 'id_kategori'=>$request->id_kategori,
                 'nama_kata'=>$request->nama_kata,
+                'pelafalan'=>$request->pelafalan,
+                'audio'=>$request->audio,
                 'deskripsi'=>$request->deskripsi
             ]);
         return redirect('admin/kata')->with('success','Data Berhasil Diubah');

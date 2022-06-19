@@ -13,7 +13,9 @@
 						<tbody>
 							<h3>{{$kata->nama_kata}}</h3>
 							<hr>
-							<p>deskripsi : <br>{!!nl2br($kata->deskripsi)!!}  
+							<p>Pelafalan : <br>{!!nl2br($kata->pelafalan)!!}  
+							<p>Audio : <br>{!!nl2br($kata->audio)!!}  
+							<p>Deskripsi : <br>{!!nl2br($kata->deskripsi)!!}  
 								<!-- Email : {{$kata->nama_kata}}
 							</p>
 							<p>

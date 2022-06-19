@@ -6,7 +6,7 @@
 		<div class="col-md-12 mt-5">
 			<div class="card">
 				<div class="card-header">
-					Data Idiom
+					Data Kategori
 					<a href="{{url('admin/idiom/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Tambah</a>
 				</div>
 				<div class="card-body">
@@ -14,7 +14,7 @@
 						<thead>
 							<th>No</th>
 							<th>Aksi</th>
-							<th>Idiom</th>
+							<th>Kategori</th>
 						</thead>
 						<tbody>
 							@foreach($list_kategori as $d)

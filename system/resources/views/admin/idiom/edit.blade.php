@@ -6,14 +6,14 @@
 		<div class="col-md-12 mt-5">
 			<div class="card">
 				<div class="card-header">
-					Edit Data Idiom
+					Edit Kategori
 				</div>
 				<div class="card-body">
 					<form action="{{url('admin/idiom/update', $list_kategori->id)}}" method="post">
 						@csrf
 					<input type="hidden" name="id" value="{{$list_kategori->id}}">
 					<div class="form-group">
-						<label for="" class="control-label">Idiom</label>
+						<label for="" class="control-label">Kategori</label>
 						<input type="text" name="nama_kategori" class="form-control" value="{{$list_kategori->nama_kategori}}">
 					</div>
 

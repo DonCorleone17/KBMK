@@ -24,6 +24,14 @@
 							@endforeach
 						</select>	
 					</div>
+					<div class="form-group">
+							<label class="label">Pelafalan</label>
+							<textarea class="form-control"  name="pelafalan" style="height: 120px"></textarea>	
+						</div>
+						<div class="form-group">
+							<label class="label">Audio</label>
+							<textarea class="form-control"  name="audio" style="height: 120px"></textarea>	
+						</div>
 						<div class="form-group">
 							<label class="label">Deskripsi</label>
 							<textarea class="form-control"  name="deskripsi" style="height: 120px"></textarea>	

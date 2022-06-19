@@ -6,7 +6,7 @@
 		<div class="col-md-12 mt-5">
 			<div class="card">
 				<div class="card-header">
-					Detail Data Idiom
+					Detail Kategori
 				</div>
 				<div class="card-body">
 					<table class="table">

@@ -13,7 +13,7 @@
 						@csrf
 					<input type="hidden" name="id" value="{{$kata->id}}">
 					<div class="form-group">
-						<label for="" class="control-label">nama kata </label>
+						<label for="" class="control-label">Nama Kata </label>
 						<input type="text" name="nama_kata" class="form-control" value="{{$kata->nama_kata}}">
 					</div>
 					<div class="form-group">
@@ -25,9 +25,16 @@
 							@endforeach
 						</select>	
 					</div>
-
 					<div class="form-group">
-						<label for="" class="control-label">deskripsi</label>
+						<label for="" class="control-label">Pelafalan</label>
+						<textarea class="form-control"  name="pelafalan" style="height: 120px">{{$kata->pelafalan}}</textarea>	
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label">Audio</label>
+						<textarea class="form-control"  name="audio" style="height: 120px">{{$kata->audio}}</textarea>	
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label">Deskripsi</label>
 						<textarea class="form-control"  name="deskripsi" style="height: 120px">{{$kata->deskripsi}}</textarea>	
 					</div>
 
